@@ -1,0 +1,46 @@
+  public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);         
+       
+
+int nums[]={12,0,5,6,10};
+int prod[]=new int[nums.length];
+int product=1;
+//int productP=0;
+int count=0;
+for(int i=0;i<nums.length;i++){
+    if(nums[i]==0){
+        count++;
+        continue;
+    }
+    product*=nums[i];
+
+}
+for(int i=0;i<prod.length;i++){
+  if(count==1){
+    if(nums[i]!=0){
+        prod[i]=0;
+    }
+else{
+    prod[i]=product;
+}
+}
+    else if(count==0){
+prod[i]=product/nums[i];
+    }
+    else if(count>1){
+        if(nums[i]!=0 || nums[i]==0){
+            prod[i]=0;
+        }
+    }
+  
+
+    
+}
+
+for(int i=0;i<prod.length;i++){
+   System.out.print(prod[i] + "  " );
+}
+
+
+
+}
