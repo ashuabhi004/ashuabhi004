@@ -1,7 +1,7 @@
 // legendres formula
 class Solution{
     static int trailingZeroes(int n){
-        // Write your code here
+        
         
          int count = 0;
     while (n >= 5
