@@ -1,0 +1,47 @@
+time complexity should be linear
+extra space should not be used 
+
+
+brute force--
+ public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+int nums[]={1,6,4,3,2};
+// tc= o(n) sc=o(1);
+int n=sc.nextInt();
+
+for(int i=1;i<=n;i++){
+   boolean a=false;
+   
+   for(int j=0;j<nums.length;j++){
+if(i==nums[j]){
+   a=true;
+
+}
+   }
+   if(a==false){
+      System.out.println("missing number is : " + i);
+      break;
+   }
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+OPTIMIZED SOLN-
+   public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+
+
+int nums[]={1,4,3};
+// tc= o(n) sc=o(1);
+int n=sc.nextInt();
+int sum=0;
+for(int i=1;i<=n;i++){
+   sum+=i;
+}
+for(int i=0;i<nums.length;i++){
+   sum-=nums[i];
+}
+System.out.println("missing number is : " + sum );
+
+
+
+
+   }
