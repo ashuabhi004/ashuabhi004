@@ -1,0 +1,37 @@
+public class BalanceIndex {
+    public static void main(String[] args) {
+        int nums[] = {1, 2, 3};
+        boolean found = false;
+
+        if (nums.length == 1) {
+            System.out.println(nums[0]);
+        } else {
+            int totalSum = 0;
+            int leftSum = 0;
+
+            // Calculate the total sum of the array
+            for (int num : nums) {
+                totalSum += num;
+            }
+
+            // Iterate through the array to find the balance index
+            for (int i = 0; i < nums.length; i++) {
+                // Calculate right sum by subtracting the current element and left sum from the total sum
+                int rightSum = totalSum - leftSum - nums[i];
+                
+                if (leftSum == rightSum) {
+                    System.out.println(i);
+                    found = true;
+                    break;
+                }
+
+                // Update the left sum for the next iteration
+                leftSum += nums[i];
+            }
+
+            if (!found) {
+                System.out.println(-1);
+            }
+        }
+    }
+}
