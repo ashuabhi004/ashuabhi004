@@ -1,0 +1,37 @@
+    public static void main(String[] args) {
+      Scanner sc= new Scanner(System.in);  
+int n=sc.nextInt();
+//n==15
+int prime[]=new int[n+1];
+for(int i=2;i<=n;i++){
+    if(prime[i]==0){
+        for(int j=i*i;j<=n;j+=i){
+            prime[j]=1;
+        }
+
+
+    }
+}
+boolean flag=false;
+int prod=1;
+int i=2;
+while(i<=n){
+    
+    if(prime[i]==0){
+        prod*=i;
+    } i++;
+    if(prod-1==n || prod+1==n || prod==n){
+        flag=true;
+        break;
+    }
+}
+if(flag==true){
+    System.out.println("true");
+}
+else{
+    System.out.println("false");
+}
+
+
+    }
+}
